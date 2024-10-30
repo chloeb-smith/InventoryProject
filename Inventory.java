@@ -1,10 +1,13 @@
+import java.util.ArrayList;
+
 public class Inventory {
 
-    Apparel[] apparelItems;
+    ArrayList<Apparel> apparelItems;
 
-    Inventory(Apparel[] apparelItems){
+    Inventory(ArrayList<Apparel> apparelItems){
         this.apparelItems = apparelItems;
 
     }
-    public void addItem(Apparel item){apparelItems}
+    public void addItem(Apparel item){apparelItems.add(item);}
+    
 }

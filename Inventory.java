@@ -9,5 +9,8 @@ public class Inventory {
 
     }
     public void addItem(Apparel item){apparelItems.add(item);}
-    
+
+    public void deleteItem(Apparel item){apparelItems.remove(item);}
+
+    public String displayApparelItems(){return ".";}
 }

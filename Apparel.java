@@ -45,7 +45,7 @@ public class Apparel {
 
     @Override
     public String toString() {
-
-        return  ;
+        // fix with correct %s and string formatting
+        return "Product Name: " + getProductName() + "\tDate Purchased: " + getDate() + "\tSize: " + getSize() + "\tCategory: " + getCategory();
     }
 }

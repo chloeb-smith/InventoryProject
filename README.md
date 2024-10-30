@@ -5,7 +5,7 @@ Project Spec:
 
 The program will be for business use to track current stock and ideal stock. The program will be able to generate a restock list determined by subtracting current stock from ideal stock. 
 
-Database for clothes - Apparel objects will be kept in a { } arrayList,  method for adding/ subtracting from array
+Database for clothes - Apparel objects will be kept in a { } arrayList,  method for adding/ subtracting from array. 
 
 
 Calculations will include: 

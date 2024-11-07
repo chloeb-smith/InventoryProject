@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import com.opencsv.CSVWriter;
+import java.io.*
 
 public class Inventory {
 
@@ -11,12 +12,12 @@ public class Inventory {
 
     public void addItem(Apparel item) {
         apparelItems.add(item);
-        // rewrite
+        rewriteCSV(apparelItems);
     }
 
     public void deleteItem(int index){
         apparelItems.remove(index-1);
-        // rewrite
+        rewriteCSV(apparelItems)
     }
 
     public String displayApparelItems(){
@@ -32,6 +33,13 @@ public class Inventory {
     }
 
     public void rewriteCSV(ArrayList<Apparel> apparelItems){
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("currentInventory.csv"))) {
+
+            for (item : apparelItems){
+                writer.write(getProductName()+','+getDate()+','+getSize()+','+getCategory());
+                writer.newLine();
+            }
 
     }
 }

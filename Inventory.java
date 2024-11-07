@@ -36,10 +36,14 @@ public class Inventory {
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("currentInventory.csv"))) {
 
-            for (item : apparelItems){
-                writer.write(getProductName()+','+getDate()+','+getSize()+','+getCategory());
+            for (Apparel item : apparelItems){
+                writer.write(item.getProductName()+','+item.getDate()+','+item.getSize()+','+item.getCategory());
                 writer.newLine();
             }
+            writer.close()
 
+        }
     }
 }
+
+

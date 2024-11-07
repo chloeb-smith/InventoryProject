@@ -43,4 +43,21 @@ public class Inventory {
             System.out.println("try again");
         }
     }
+
+    public void readCSV() {
+
+        try (BufferedReader reader = new BufferedReader(new FileReader("currentInventory.csv"))) {
+            
+            ArrayList<Apparel> apparelItems;
+
+            while (reader.readLine() != null ){
+                String line = reader.readLine();
+                String line.strip('\n');
+                String[] line = line.split(',');
+
+                Apparel item = new Apparel(line[0],line[1],line[2],line[3])
+                apparelItems.add(item);
+                
+        }
+    }
 }

@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.io.*;
+import java.util.Arrays;
 
 public class Inventory {
 
@@ -44,18 +45,18 @@ public class Inventory {
         }
     }
 
-    public void readCSV() {
+    public void readCSV() throws IOException {
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("currentInventory.csv"))) {
+        BufferedReader reader = new BufferedReader(new FileReader("currentInventory.csv"));
             
-            ArrayList<Apparel> apparelItems;
+            ArrayList<Apparel> apparelItems = new ArrayList<>();
+            String line;
+            while ((line = reader.readLine()) != null ){
+                line = reader.readLine();
+                line = line.strip();
+                String[] attributes = line.split(",");
 
-            while (reader.readLine() != null ){
-                String line = reader.readLine();
-                String line.strip('\n');
-                String[] line = line.split(',');
-
-                Apparel item = new Apparel(line[0],line[1],line[2],line[3])
+                Apparel item = new Apparel(attributes[0],attributes[1],attributes[2],attributes[3]);
                 apparelItems.add(item);
                 
         }

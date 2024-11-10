@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.io.*;
-import java.util.Arrays;
 
 public class Inventory {
 
@@ -20,7 +19,8 @@ public class Inventory {
         rewriteCSV(apparelItems);
     }
 
-    public String displayApparelItems() {
+    public String displayApparelItems() throws IOException {
+        ArrayList<Apparel> apparelItems = readCSV();
         String items = "";
         int index = 1; // Start index at 1
 
@@ -45,7 +45,7 @@ public class Inventory {
         }
     }
 
-    public void readCSV() throws IOException {
+    public ArrayList<Apparel> readCSV() throws IOException {
 
         BufferedReader reader = new BufferedReader(new FileReader("currentInventory.csv"));
             
@@ -59,6 +59,7 @@ public class Inventory {
                 Apparel item = new Apparel(attributes[0],attributes[1],attributes[2],attributes[3]);
                 apparelItems.add(item);
                 
-        }
+            }
+        return apparelItems;
     }
 }

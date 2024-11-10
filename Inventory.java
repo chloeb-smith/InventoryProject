@@ -51,7 +51,7 @@ public class Inventory {
             
             ArrayList<Apparel> apparelItems = new ArrayList<>();
             String line;
-            while ((line = reader.readLine()) != null ){
+            while ((reader.readLine()) != null ){
                 line = reader.readLine();
                 line = line.strip();
                 String[] attributes = line.split(",");
